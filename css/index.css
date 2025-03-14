@@ -82,206 +82,205 @@ img {
 }
 
 .header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgb(229, 229, 229); /* Initial background */
-    z-index: 100;
-    transition: all 0.6s ease-in-out;
-    transform: translateY(0);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(229, 229, 229); /* Initial background */
+  z-index: 100;
+  transition: all 0.6s ease-in-out;
+  transform: translateY(0);
 }
 
 /* Sticky Header with Fade Effect */
 .header.sticky-header {
-    background-color: rgba(236, 236, 236, 0.9); /* Slight transparency */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transform: translateY(0);
-    opacity: 1;
+  background-color: rgba(236, 236, 236, 0.9); /* Slight transparency */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+  opacity: 1;
 }
 
 /* Transparent Header After Transition */
 .header:not(.sticky-header) {
-    background-color: rgba(236, 236, 236, 0); /* Fully transparent */
-    transform: translateY(-20px);
-    opacity: 0.8;
+  background-color: rgba(236, 236, 236, 0); /* Fully transparent */
+  transform: translateY(-20px);
+  opacity: 0.8;
 }
 
 /* Header Container */
 .header__container {
-    height: 6rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
+  height: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
 }
 
 /* Logo */
 .header__logo {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 20px;
-    font-weight: 700;
-    color: #0b1b35;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #0b1b35;
 }
 
 .header__logo-icon {
-    width: 10rem; /* Increased width */
-    height: 2.5rem; /* Added height */
-    margin-top: 1rem;
+  width: 10rem; /* Increased width */
+  height: 2.5rem; /* Added height */
+  margin-top: 1rem;
 }
 
 /* Navigation */
 .header__menu {
-    display: flex;
-    align-items: center;
-    margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
 }
 
 .header__list {
-    display: flex;
-    gap: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
 }
 
 .header__link {
-    font-size: 15px;
-    color: #0d111e;
-    text-decoration: none;
-    transition: all 0.4s ease-in-out;
+  font-size: 15px;
+  color: #0d111e;
+  text-decoration: none;
+  transition: all 0.4s ease-in-out;
 }
 
 /* Unified Hover Effect for All Buttons */
-.header__link:hover{
-    font-weight: 600;
-    color: #fff;
-    background-color: #08a87b;
-    padding: 8px 12px;
-    border-radius: 5px;
+.header__link:hover {
+  font-weight: 600;
+  color: #fff;
+  background-color: #08a87b;
+  padding: 8px 12px;
+  border-radius: 5px;
 }
 
 /* Button */
 .header__button {
-    margin-left: 1.5rem;
-    padding: 10px 20px;
-    background: #08a87b;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: all 0.3s;
+  margin-left: 1.5rem;
+  padding: 10px 20px;
+  background: #08a87b;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s;
 }
 
 .header__button:hover {
-    background: #067b5c;
-    transform: scale(1.05);
+  background: #067b5c;
+  transform: scale(1.05);
 }
 
 /* Mobile Menu */
 @media screen and (max-width: 767px) {
-    .header__menu {
-      position: fixed;
-      width: 75%;
-      max-width: 300px;
-      height: 100vh;
-      top: 0;
-      right: -100%;
-      background-color: rgba(255, 255, 255, 0.95);
-      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-      padding: 3rem 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: right 0.6s ease-in-out, opacity 0.6s ease-in-out;
-      opacity: 0;
-    }
-  
-    /* Show menu when active */
-    .header__menu.show-menu {
-      right: 0;
-      opacity: 1;
-    }
-  
-    /* Navigation List */
-    .header__list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      width: 100%;
-    }
-  
-    .header__link {
-      font-size: 18px;
-      color: #333;
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.4s ease-in-out;
-      padding: 10px;
-      width: 100%;
-      text-align: center;
-      border-radius: 8px;
-    }
-  
-    .header__link:hover {
-      background-color: #08a87b;
-      color: #fff;
-      transform: scale(1.05);
-    }
-  
-    /* Register Button */
-    .header__button {
-      margin-top: 2rem;
-      padding: 12px 20px;
-      background: #08a87b;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: all 0.3s;
-      font-size: 16px;
-      font-weight: 600;
-    }
-  
-    .header__button:hover {
-      background: #067b5c;
-      transform: scale(1.05);
-    }
-  
-    /* Toggle Button */
-    .header__toggle {
-      display: inline-flex;
-      font-size: 1.8rem;
-      color: #0b1b35;
-      cursor: pointer;
-      transition: color 0.4s ease-in-out;
-    }
-  
-    .header__toggle i {
-      transition: transform 0.4s;
-    }
-  
-    /* Rotate icon when menu is open */
-    .header__toggle.active i {
-      transform: rotate(90deg);
-    }
-  
-    /* Dark background overlay when menu opens */
-    .menu-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.5);
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.4s ease-in-out, visibility 0.4s;
-    }
-  
-    .menu-overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-}
+  .header__menu {
+    position: fixed;
+    width: 75%;
+    max-width: 300px;
+    height: 100vh;
+    top: 0;
+    right: -100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: right 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    opacity: 0;
+  }
 
+  /* Show menu when active */
+  .header__menu.show-menu {
+    right: 0;
+    opacity: 1;
+  }
+
+  /* Navigation List */
+  .header__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .header__link {
+    font-size: 18px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.4s ease-in-out;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  .header__link:hover {
+    background-color: #08a87b;
+    color: #fff;
+    transform: scale(1.05);
+  }
+
+  /* Register Button */
+  .header__button {
+    margin-top: 2rem;
+    padding: 12px 20px;
+    background: #08a87b;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .header__button:hover {
+    background: #067b5c;
+    transform: scale(1.05);
+  }
+
+  /* Toggle Button */
+  .header__toggle {
+    display: inline-flex;
+    font-size: 1.8rem;
+    color: #0b1b35;
+    cursor: pointer;
+    transition: color 0.4s ease-in-out;
+  }
+
+  .header__toggle i {
+    transition: transform 0.4s;
+  }
+
+  /* Rotate icon when menu is open */
+  .header__toggle.active i {
+    transform: rotate(90deg);
+  }
+
+  /* Dark background overlay when menu opens */
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease-in-out, visibility 0.4s;
+  }
+
+  .menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
 
 .home {
   padding: 7rem 0 3rem;
@@ -439,49 +438,61 @@ img {
 .email__img {
   justify-self: center;
 }
-.team__container {
+.testimonials__container {
   gap: 3rem;
-}
-.team__subtitle {
-  color: #fb9333;
-}
-.team__group {
-  display: grid;
-  justify-content: center;
-  gap: 2rem;
-}
-.team__item {
-  width: 230px;
-  display: grid;
-  gap: 2rem;
-}
-.team__item-img {
-  width: 100px;
-  justify-self: center;
-}
-.team__item-data {
   text-align: center;
 }
-.team__item-name {
+.testimonials__subtitle {
+  color: #08a87b;
+}
+.testimonials__group {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.testimonial__item {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 350px;
+  flex: 1 1 300px;
+}
+.testimonial__text {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+.testimonial__author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.testimonial__img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.testimonial__name {
   font-size: 18px;
   font-weight: 700;
   color: #0b1b35;
-  margin-bottom: 10px;
 }
-.team__item-profession {
+.testimonial__profession {
   font-size: 15px;
   color: #72747a;
-  margin-bottom: 1rem;
 }
-.team__item-socials {
-  display: inline-flex;
-  align-items: center;
-  gap: 1rem;
-}
-.team__item-link {
-  display: inline-flex;
-  font-size: 1.5rem;
-  color: #08a87b;
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .testimonials__group {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .newsletter__container {
   gap: 2rem;
@@ -490,7 +501,7 @@ img {
   text-align: center;
 }
 .newsletter__subtitle {
-  color: #fc526a;
+  color: #08a87b;
 }
 .newsletter__title {
   margin-bottom: 1rem;
@@ -602,6 +613,49 @@ img {
 }
 .scrollup.scroll-action {
   opacity: 1;
+}
+
+.our-client-container {
+  text-align: center;
+  padding: 20px;
+}
+h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+}
+p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* client section */
+.our-client-carousel-container {
+  position: relative;
+  width: 80%;
+  overflow: hidden;
+  margin: auto;
+}
+.our-client-carousel {
+  display: flex;
+  gap: 20px;
+  animation: our-client-scroll 15s linear infinite;
+}
+@keyframes our-client-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.our-client-card {
+  background: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 150px;
+  flex: 0 0 auto;
 }
 @media screen and (min-width: 480px) {
   .home__data,
