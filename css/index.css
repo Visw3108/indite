@@ -35,7 +35,7 @@ img {
   height: auto;
 }
 .section {
-  padding: 6rem 0 3rem;
+  padding: 5rem 0 3rem;
 }
 .section-subtitle {
   display: block;
@@ -618,6 +618,7 @@ img {
 .our-client-container {
   text-align: center;
   padding: 20px;
+  margin-top: 10px;
 }
 h2 {
   font-size: 28px;
@@ -820,7 +821,7 @@ p {
 }
 @media screen and (min-width: 1024px) {
   .section {
-    padding: 8rem 0 4rem;
+    padding: 5rem 0 4rem;
   }
   .home {
     padding-bottom: 4rem;
@@ -829,6 +830,6 @@ p {
     grid-template-columns: repeat(3, max-content);
   }
   .footer__container {
-    gap: 8rem;
+    gap: 5rem;
   }
 }
