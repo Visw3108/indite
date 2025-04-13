@@ -415,8 +415,8 @@ img {
 }
 
 .card-image img {
-  width: 100%;
-  height: auto;
+  width: 90%;
+  height: 50%;
 }
 
 @media (max-width: 768px) {
