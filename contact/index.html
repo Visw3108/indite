@@ -18,7 +18,10 @@
   <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
 
   <!-- ===== MAIN CSS ===== -->
-  <link rel="stylesheet" href="/blog/style.css" />
+  <link rel="stylesheet" href="/contact/style.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
 </head>
 
 <body>
@@ -35,7 +38,7 @@
           <li class="header__item"><a href="/" class="header__link">Home</a></li>
           <li class="header__item"><a href="/service/" class="header__link">Service</a></li>
           <li class="header__item"><a href="/about/" class="header__link">About</a></li>
-          <li class="header__item"><a href="/blog/" class="header__link"><Blog</Blockquote></a></li>
+          <li class="header__item"><a href="/blog/" class="header__link">Blog</a></li>
           <!-- <li class="header__item"><a href="#" class="header__link">Contact</a></li> -->
         </ul>
 
@@ -51,90 +54,65 @@
 
   <main class="main">
     <!-- ===== HOME SECTION ===== -->
-    <div class="blog-container">
-        <div class="blog-header">
-          <h1><span style="color: #08a87b">tubik</span> <span style="color: #000">blog</span></h1>
-          <a href="#">view latest</a>
-        </div>
-    
-        <!-- Grid layout for featured + cards -->
-        <div class="blog-grid">
-          <div class="blog-feature">
-            <img src="/img/aboutus.jpg" alt="Feature" />
-            <div class="blog-overlay">
-              <span>Business</span>
-              <h2>Sketchbook as a Source of Inspiration and Idea Search</h2>
-              <p>A brief review of how illustrators and digital artists can use sketchbooks to boost their creative process and idea search.</p>
-              <a href="#" class="blog-readmore">Read More</a>
+    <div class="contact-container">
+        <div class="contact-form">
+          <form>
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" placeholder="First Name" />
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" placeholder="Last Name" />
+              </div>
             </div>
-          </div>
-
+            <div class="form-row">
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="Email" />
+              </div>
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="text" placeholder="Phone Number" />
+              </div>
+            </div>
+            <div class="form-group full">
+              <label>What do you have in mind</label>
+              <textarea placeholder="Please enter query..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+          </form>
+        </div>
+      
+        <div class="contact-info">
+          <h2>Contact us</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim</p>
           
-    
-          <div class="blog-card">
-            <img src="/img/aboutus.jpg" alt="Blog1"/>
-            <span>UI/UX</span>
-            <h3>Ecommerce UI/UX: 6 Web and Mobile Design Projects for Online Shopping</h3>
-            <a href="#" class="blog-readmore">Read More</a>
+          <div class="info-item">
+            <i class="fas fa-phone"></i>
+            <p>+1258 3258 5679</p>
           </div>
-    
-          <div class="blog-card">
-            <img src="/img/aboutus.jpg" alt="Blog2"/>
-            <span>Business</span>
-            <h3>Case Study: HotelCard Service Illustrations. Digital Art for User Experience</h3>
-            <a href="#" class="blog-readmore">Read More</a>
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <p>hello@workik.com</p>
           </div>
-    
-          <div class="blog-card">
-            <img src="/img/aboutus.jpg" alt="Blog3"/>
-            <span>UI/UX</span>
-            <h3>Design for Fintech: UI/UX Projects for Finance and Business</h3>
-            <a href="#" class="blog-readmore">Read More</a>
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>102 street, y cross 485656</p>
           </div>
-    
-          <div class="blog-card">
-            <img src="/img/aboutus.jpg" alt="Blog4"/>
-            <span>UI/UX</span>
-            <h3>Case Study: Adam Braun. Creating Personal Website for Entrepreneur</h3>
-            <a href="#" class="blog-readmore">Read More</a>
+      
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
           </div>
-        </div>
-    
-        <!-- More Articles -->
-        <div class="blog-more">
-          <h2>More articles</h2>
-          <div class="blog-more-grid">
-            <div class="blog-card">
-              <img src="/img/aboutus.jpg" alt="More1" />
-              <span>Animation</span>
-              <h3>Case Study: Slumber. Mobile UI Design for Healthy Sleeping</h3>
-              <p>The case study shares the mobile UI design solutions created for Slumber...</p>
-              <a href="#" class="blog-readmore">Read More</a>
-            </div>
-            <div class="blog-card">
-              <img src="/img/aboutus.jpg" alt="More2" />
-              <span>Case Study</span>
-              <h3>Case Study: Tubik in Paris. Design of Narrative Illustration</h3>
-              <p>The study unveils all the stages of creating the series of narrative illustrations...</p>
-              <a href="#" class="blog-readmore">Read More</a>
-            </div>
-            <div class="blog-card">
-              <img src="/img/aboutus.jpg" alt="More3" />
-              <span>Animation</span>
-              <h3>Step by Step Guide to Custom Promo Video Design</h3>
-              <p>The article reveals the workflow and specific features of the creative process...</p>
-              <a href="#" class="blog-readmore">Read More</a>
-            </div>
-            <div class="blog-card">
-              <img src="/img/aboutus.jpg" alt="More4" />
-              <span>Case Study</span>
-              <h3>Case Study: Mayple. Website Design for Marketing Marketplace</h3>
-              <p>Check the case study on website design and custom graphics for Mayple...</p>
-              <a href="#" class="blog-readmore">Read More</a>
-            </div>
-          </div>
+          
         </div>
       </div>
+      
+      
     <!-- ===== NEWSLETTER SECTION ===== -->
   </main>
 
@@ -144,7 +122,7 @@
       <div class="footer__group">
         <div class="footer__item">
           <a href="#" class="footer__item-logo header__logo">
-            <img src="./img/inditeindia.png" alt="" class="header__logo-icon" />
+            <img src="/img/inditeindia.png" alt="" class="header__logo-icon" />
           </a>
           <p class="footer__item-text">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -240,7 +218,7 @@
   <script src="./js/swiper-bundle.min.js"></script>
 
   <!-- ===== MAIN JS ===== -->
-  <script src="/blog/script.js"></script>
+  <script src="/contact/script.js"></script>
 </body>
 
 </html>
