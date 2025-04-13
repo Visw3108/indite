@@ -357,17 +357,22 @@ img {
   .submit-btn {
     padding: 12px 0;
     width: 150px;
-    background-color: #1c3b27;
+    background-color: #08a87b;
     color: #fff;
     font-size: 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+}
   
   .submit-btn:hover {
-    background-color: #142a1d;
+    background: #067b5c;
+  transform: scale(1.05);
   }
   
   /* === Right Info Section === */

@@ -57,7 +57,31 @@ toggleBtn.addEventListener("click", toggleMenu);
 
 
 
+function startInfiniteScroll(containerId, direction = 'left', speed = 1) {
+  const container = document.getElementById(containerId);
+  const clone = container.cloneNode(true);
+  container.parentElement.appendChild(clone);
 
+  let x = 0;
+  function animate() {
+    x += (direction === 'left' ? -speed : speed);
+    container.style.transform = `translateX(${x}px)`;
+    clone.style.transform = `translateX(${x + container.offsetWidth}px)`;
+
+    if (Math.abs(x) >= container.offsetWidth) {
+      x = 0;
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  startInfiniteScroll('carousel-row-1', 'left', 0.5);
+  startInfiniteScroll('carousel-row-2', 'right', 0.5);
+});
 
 
 
