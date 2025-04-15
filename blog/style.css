@@ -129,8 +129,8 @@ img {
 }
 
 .header__logo-icon {
-  width: 10rem; /* Increased width */
-  height: 2.5rem; /* Added height */
+  width: 11rem;
+  height: 2.3rem; 
   margin-top: 1rem;
 }
 
@@ -148,9 +148,10 @@ img {
 
 .header__link {
   font-size: 15px;
-  color: #0d111e;
+  color: #000000;
   text-decoration: none;
   transition: all 0.4s ease-in-out;
+  font-weight: bold;
 }
 
 /* Unified Hover Effect for All Buttons */
@@ -213,7 +214,7 @@ img {
 
   .header__link {
     font-size: 18px;
-    color: #333;
+    color: #000000;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.4s ease-in-out;
@@ -251,13 +252,19 @@ img {
     transform: scale(1.05);
   }
 
+  .header__logo-icon {
+    width: 9rem;
+    height: 2rem; 
+    margin-top: 1rem;
+  }
   /* Toggle Button */
   .header__toggle {
     display: inline-flex;
     font-size: 1.8rem;
-    color: #0b1b35;
+    color: #000000;
     cursor: pointer;
     transition: color 0.4s ease-in-out;
+    margin-top: 1.3rem;
   }
 
   .header__toggle i {
