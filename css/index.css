@@ -349,8 +349,8 @@ img {
   transition: 0.4s;
 }
 .service__item:hover {
-  border-color: #fff;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-color: #abffe272;
+  box-shadow: 0 8px 20px rgba(54, 255, 191, 0.285);
 }
 .service__item-icon {
   width: 100px;

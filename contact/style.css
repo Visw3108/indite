@@ -302,7 +302,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  background: #fff;
+  background: #efefef;
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   padding: 40px;
@@ -311,7 +311,7 @@ img {
   gap: 40px;
   flex-wrap: wrap;
   position: relative;
-  margin-top: 10rem;
+  margin-top: 7rem;
 }
 
 .contact-form, .contact-info {
@@ -347,14 +347,33 @@ form {
 .form-group textarea {
   padding: 10px;
   border: 1px solid #999;
-  border-radius: 4px;
+  border-radius: 8px;
   font-size: 14px;
+  transition: all 0.3s ease;
+  outline: none;
+  background-color: #fff;
+  box-shadow: none;
+}
+
+/* Hover effect */
+.form-group input:hover,
+.form-group textarea:hover {
+  border-color: #08a87b;
+  box-shadow: 0 0 6px rgba(8, 168, 123, 0.3);
+}
+
+/* Optional focus effect too (good for accessibility and UX) */
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #08a87b;
+  box-shadow: 0 0 8px rgba(8, 168, 123, 0.5);
 }
 
 textarea {
   min-height: 100px;
   resize: none;
 }
+
 
 .full {
   margin-bottom: 30px;
@@ -383,14 +402,15 @@ textarea {
 }
 
 .contact-info h2 {
-  font-size: 26px;
+  font-size: 30px;
   margin-bottom: 15px;
   font-weight: 700;
+  color: black;
 }
 
 .contact-info p {
-  font-size: 14px;
-  color: #666;
+  font-size: 16px;
+  color: #000000;
   line-height: 1.6;
   margin-bottom: 25px;
 }
@@ -399,14 +419,14 @@ textarea {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: #444;
+  color: #000000;
   margin-bottom: 18px;
   font-size: 14px;
 }
 
 .info-item i {
-  font-size: 16px;
-  color: #444;
+  font-size: 17px;
+  color: #000000;
   margin-bottom: 25px;
 }
 
@@ -420,7 +440,7 @@ textarea {
 .social-icons a {
   transition: all 0.3s ease;
   font-size: 20px;
-  color: #444;
+  color: #161616;
 }
 
 .social-icons a:hover {
@@ -449,6 +469,7 @@ textarea {
   left: -40px;
   border-radius: 0 0 50% 50%;
 }
+
 
 /* === Thank You Popup === */
 .thank-you-popup {

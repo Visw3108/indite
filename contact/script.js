@@ -57,12 +57,28 @@ function stickyHeader() {
   
   
   
-  const form = document.querySelector("form");
+  const form = document.getElementById("contactForm");
   const popup = document.getElementById("thankYouPopup");
-  const popupContent = document.querySelector(".popup-content");
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
+
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phonePattern = /^\d{10,15}$/;
+
+    if (!emailPattern.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    if (!phonePattern.test(phone)) {
+      alert("Please enter a valid phone number (10 to 15 digits).");
+      return;
+    }
+
     popup.style.display = "flex";
     form.reset();
   });
@@ -71,7 +87,6 @@ function stickyHeader() {
     popup.style.display = "none";
   }
 
-  // Close popup on outside click
   window.addEventListener("click", function (e) {
     if (e.target === popup) {
       closePopup();
