@@ -57,7 +57,26 @@ function stickyHeader() {
   
   
   
-  
+  const form = document.querySelector("form");
+  const popup = document.getElementById("thankYouPopup");
+  const popupContent = document.querySelector(".popup-content");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    popup.style.display = "flex";
+    form.reset();
+  });
+
+  function closePopup() {
+    popup.style.display = "none";
+  }
+
+  // Close popup on outside click
+  window.addEventListener("click", function (e) {
+    if (e.target === popup) {
+      closePopup();
+    }
+  });
   
   
   
