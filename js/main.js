@@ -55,6 +55,18 @@ overlay.addEventListener("click", () => {
 // Event Listener
 toggleBtn.addEventListener("click", toggleMenu);
 
+// Toggle dropdown for mobile with icon rotation
+document.querySelectorAll(".dropdown-toggle").forEach(link => {
+  link.addEventListener("click", function (e) {
+    if (window.innerWidth <= 767) {
+      e.preventDefault();
+      const parent = this.closest(".header__dropdown");
+      parent.classList.toggle("active");
+    }
+  });
+});
+
+
 
 
 function startInfiniteScroll(containerId, direction = 'left', speed = 1) {
