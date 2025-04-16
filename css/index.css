@@ -475,17 +475,20 @@ img {
   border: 1.5px solid rgba(114, 116, 122, 0.3);
   border-radius: 2rem;
   transition: 0.4s;
+  height: 250px;
 }
 .service__item:hover {
   border-color: #abffe272;
   box-shadow: 0 8px 20px rgba(54, 255, 191, 0.285);
 }
 .service__item-icon {
-  width: 100px;
+  width: 80px;
+  margin-left: 5rem;
 }
 .service__item-title {
   font-size: 18px;
   margin-bottom: 10px;
+  text-align: center;
 }
 .service__item-text {
   font-size: 15px;
@@ -894,7 +897,6 @@ img {
   .home__title {
     font-size: 36px;
   }
-  .service__item-title,
   .team__item-name,
   .footer__item-title {
     font-size: 20px;
