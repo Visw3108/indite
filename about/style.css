@@ -280,13 +280,11 @@ img {
     opacity: 0;
   }
 
-  /* Show menu when active */
   .header__menu.show-menu {
     right: 0;
     opacity: 1;
   }
 
-  /* Navigation List */
   .header__list {
     display: flex;
     flex-direction: column;
@@ -311,52 +309,11 @@ img {
     transform: scale(1.05);
   }
 
+  /* 🔴 Hide dropdown menu on mobile */
+  .header__dropdown .dropdown__menu {
+    display: none !important;
+  }
 
-  /* Mobile dropdown override */
-.header__dropdown {
-  width: 100%;
-}
-
-.dropdown__menu {
-  position: static;
-  display: none;
-  background: none;
-  box-shadow: none;
-  transform: none;
-  opacity: 1;
-  flex-direction: column;
-  width: 100%;
-  padding-left: 1rem;
-  transition: all 0.3s ease;
-  margin-top: 0.2rem;
-}
-
-.header__dropdown.active .dropdown__menu {
-  display: flex;
-}
-
-.dropdown__link {
-  padding: 10px 0;
-  font-size: 16px;
-  text-align: left;
-  width: 100%;
-  color: #000000;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-/* Popup Hover Effect */
-.dropdown__link:hover {
-  color: #08a87b;
-  transform: scale(1.03);
-}
-
-
-  /* Register Button */
   .header__button {
     margin-top: 2rem;
     padding: 12px 20px;
@@ -376,11 +333,10 @@ img {
 
   .header__logo-icon {
     width: 9rem;
-    height: 2rem; 
+    height: 2rem;
     margin-top: 1rem;
   }
 
-  /* Toggle Button */
   .header__toggle {
     display: inline-flex;
     font-size: 1.8rem;
@@ -394,12 +350,10 @@ img {
     transition: transform 0.4s;
   }
 
-  /* Rotate icon when menu is open */
   .header__toggle.active i {
     transform: rotate(90deg);
   }
 
-  /* Dark background overlay when menu opens */
   .menu-overlay {
     position: fixed;
     top: 0;

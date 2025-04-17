@@ -1,50 +1,31 @@
 
 
-// ===== STICKY HEADER =====
-function stickyHeader() {
-  const header = document.getElementById("header");
-
-  this.scrollY > 10
-    ? header.classList.add("sticky-header")
-    : header.classList.remove("sticky-header");
-}
-window.addEventListener("scroll", stickyHeader);
-
-
 // Sticky Header Effect
 function stickyHeader() {
   const header = document.getElementById("header");
-
   if (window.scrollY > 10) {
-      header.classList.add("sticky-header");
+    header.classList.add("sticky-header");
   } else {
-      header.classList.remove("sticky-header");
+    header.classList.remove("sticky-header");
   }
 }
-
 window.addEventListener("scroll", stickyHeader);
 
+// Mobile menu toggle
 const toggleBtn = document.getElementById("header-toggle");
 const menu = document.getElementById("header-menu");
-const overlay = document.createElement("div"); // Create overlay dynamically
-
+const overlay = document.createElement("div");
 overlay.classList.add("menu-overlay");
-document.body.appendChild(overlay); // Add overlay to body
+document.body.appendChild(overlay);
 
-// Function to toggle menu
 function toggleMenu() {
   menu.classList.toggle("show-menu");
   toggleBtn.classList.toggle("active");
   overlay.classList.toggle("active");
 
-  if (menu.classList.contains("show-menu")) {
-    document.body.style.overflow = "hidden"; // Prevent scrolling when menu is open
-  } else {
-    document.body.style.overflow = "auto"; // Enable scrolling
-  }
+  document.body.style.overflow = menu.classList.contains("show-menu") ? "hidden" : "auto";
 }
 
-// Close menu when clicking outside
 overlay.addEventListener("click", () => {
   menu.classList.remove("show-menu");
   toggleBtn.classList.remove("active");
@@ -52,19 +33,10 @@ overlay.addEventListener("click", () => {
   document.body.style.overflow = "auto";
 });
 
-// Event Listener
 toggleBtn.addEventListener("click", toggleMenu);
 
-// Toggle dropdown for mobile with icon rotation
-document.querySelectorAll(".dropdown-toggle").forEach(link => {
-  link.addEventListener("click", function (e) {
-    if (window.innerWidth <= 767) {
-      e.preventDefault();
-      const parent = this.closest(".header__dropdown");
-      parent.classList.toggle("active");
-    }
-  });
-});
+
+
 
 
 
