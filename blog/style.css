@@ -91,7 +91,6 @@ img {
   z-index: 100;
   transition: all 0.6s ease-in-out;
   transform: translateY(0);
-  /* margin-top: 1rem; */
 }
 
 /* Sticky Header with Fade Effect */
@@ -125,7 +124,6 @@ img {
   gap: 5px;
   font-size: 20px;
   font-weight: 700;
-  color: #0b1b35;
 }
 
 .header__logo-icon {
@@ -133,6 +131,9 @@ img {
   height: 2.3rem; 
   margin-top: 1rem;
 }
+
+
+
 
 /* Navigation */
 .header__menu {
@@ -174,6 +175,7 @@ img {
   width: 100%;
 }
 
+
 /* Button */
 .header__button {
   margin-left: 1.5rem;
@@ -189,6 +191,75 @@ img {
   background: #067b5c;
   transform: scale(1.05);
 }
+
+/* ===============================
+   Modern Dropdown Styling - Desktop
+   =============================== */
+
+   @media screen and (min-width: 768px) {
+    .header__dropdown {
+      position: relative;
+    }
+  
+    .dropdown-toggle {
+      display: inline-flex;
+      align-items: center;
+      cursor: pointer;
+    }
+  
+    .dropdown-icon {
+      margin-left: 6px;
+      font-size: 0.8rem;
+      transition: transform 0.3s ease;
+    }
+  
+    /* Rotate arrow on hover */
+    .header__dropdown:hover .dropdown-icon {
+      transform: rotate(180deg);
+    }
+  
+    .dropdown__menu {
+      position: absolute;
+      top: 110%;
+      left: 0;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 12px 32px rgba(39, 255, 201, 0.313);
+      min-width: 220px;
+      opacity: 0;
+      transform: translateY(15px);
+      pointer-events: none;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      z-index: 1000;
+    }
+  
+    .header__dropdown:hover .dropdown__menu {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+  
+    .dropdown__link {
+      padding: 14px 20px;
+      display: block;
+      color: #333;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 1px solid #f0f0f0;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+  
+    .dropdown__link:last-child {
+      border-bottom: none;
+    }
+  
+    .dropdown__link:hover {
+      background-color: #08a87b;
+      color: white;
+    }
+  }
+  
 
 /* Mobile Menu */
 @media screen and (max-width: 767px) {
@@ -209,13 +280,11 @@ img {
     opacity: 0;
   }
 
-  /* Show menu when active */
   .header__menu.show-menu {
     right: 0;
     opacity: 1;
   }
 
-  /* Navigation List */
   .header__list {
     display: flex;
     flex-direction: column;
@@ -236,12 +305,15 @@ img {
   }
 
   .header__link:hover {
-    background-color: #08a87b;
-    color: #fff;
+    color: #000000;
     transform: scale(1.05);
   }
 
-  /* Register Button */
+  /* 🔴 Hide dropdown menu on mobile */
+  .header__dropdown .dropdown__menu {
+    display: none !important;
+  }
+
   .header__button {
     margin-top: 2rem;
     padding: 12px 20px;
@@ -252,11 +324,7 @@ img {
     transition: all 0.3s;
     font-size: 16px;
     font-weight: 600;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
-}
+  }
 
   .header__button:hover {
     background: #067b5c;
@@ -265,10 +333,10 @@ img {
 
   .header__logo-icon {
     width: 9rem;
-    height: 2rem; 
+    height: 2rem;
     margin-top: 1rem;
   }
-  /* Toggle Button */
+
   .header__toggle {
     display: inline-flex;
     font-size: 1.8rem;
@@ -282,12 +350,10 @@ img {
     transition: transform 0.4s;
   }
 
-  /* Rotate icon when menu is open */
   .header__toggle.active i {
     transform: rotate(90deg);
   }
 
-  /* Dark background overlay when menu opens */
   .menu-overlay {
     position: fixed;
     top: 0;
