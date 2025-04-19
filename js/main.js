@@ -70,3 +70,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+const carousel = document.getElementById("testimonialCarousel");
+    const wrapper = document.getElementById("carouselWrapper");
+
+    let scrollSpeed = 0.5; // pixels per frame
+    let position = 0;
+    let animationFrame;
+
+    function scrollCarousel() {
+      position -= scrollSpeed;
+      if (Math.abs(position) >= carousel.scrollWidth - wrapper.clientWidth) {
+        position = 0; // Reset to beginning
+      }
+      carousel.style.transform = `translateX(${position}px)`;
+      animationFrame = requestAnimationFrame(scrollCarousel);
+    }
+
+    // Start scrolling
+    scrollCarousel();
+
+    // Pause on hover
+    wrapper.addEventListener("mouseenter", () => cancelAnimationFrame(animationFrame));
+    wrapper.addEventListener("mouseleave", () => scrollCarousel());
