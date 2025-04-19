@@ -403,15 +403,19 @@ img {
 }
 
 .about-us-subheading {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     font-weight: bold;
 }
 
 .about-us-description {
-    color: #555;
-    margin-top: 15px;
-    line-height: 1.6;
+  color: #555;
+  margin-top: 15px;
+  line-height: 1.6;
+  text-align: justify;
+  display: flex;
+  justify-content: center;
 }
+
 
 .about-us-image {
     margin-top: 30px;
@@ -466,11 +470,12 @@ img {
 }
 
 .mission-heading {
-    font-size: 1.2rem;
+    font-size: 1.7rem;
     color: #08a87b;
     letter-spacing: 2px;
     margin-bottom: 20px;
     text-transform: uppercase;
+    font-weight: bold;
 }
 
 .main-heading {
@@ -584,12 +589,13 @@ img {
 
 .our-story h3 {
     color: #08a87b;
-    font-size: 1.1rem;
+    font-size: 1.9rem;
 }
 
 .our-story h1 {
-    font-size: 2rem;
+    font-size: 1.7rem;
     font-weight: bold;
+    margin-top: 1rem;
 }
 
 .our-story-highlight {
@@ -600,6 +606,7 @@ img {
     color: #555;
     font-size: 1.1rem;
     margin-top: 10px;
+    text-align: justify;
 }
 
 .our-story-btn {

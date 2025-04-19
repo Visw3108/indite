@@ -384,16 +384,21 @@ img {
   text-align: center;
 }
 .home__title {
-  font-size: 26px;
+  font-size: 15px;
   line-height: 140%;
   margin-bottom: 1rem;
+}
+.home__title span {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #08a87b;
 }
 .home__text {
   font-size: 15px;
   color: #72747a;
   line-height: 180%;
   margin-bottom: 2rem;
-  justify-items: center;
+  text-align: justify;
 }
 .home__buttons {
   display: inline-flex;
@@ -417,6 +422,8 @@ img {
 }
 .service__subtitle {
   color: #08a87b;
+  font-size: 2rem;
+  font-weight: bold;
 }
 .service__group {
   display: grid;
@@ -480,6 +487,7 @@ img {
   color: #72747a;
   line-height: 180%;
   margin-bottom: 1rem;
+  text-align: justify;
 }
 .feature__group {
   gap: 1rem;
@@ -562,6 +570,7 @@ img {
   display: flex;
   gap: 2rem;
   will-change: transform;
+  transition: transform 0.1s linear;
 }
 
 .testimonial__item {
@@ -610,6 +619,7 @@ img {
     min-width: 280px;
   }
 }
+
 .newsletter__container {
   gap: 2rem;
 }
@@ -618,6 +628,7 @@ img {
 }
 .newsletter__subtitle {
   color: #08a87b;
+  font-size: 1.5rem;
 }
 .newsletter__title {
   margin-bottom: 1rem;
@@ -757,39 +768,28 @@ img {
 }
 
 .our-client-container h2 {
-  font-size: 28px;
+  font-size: 2.3rem;
   font-weight: bold;
   color: #333;
 }
 
-.our-client-container p {
-  color: #666;
-  margin-bottom: 20px;
-  max-width: 600px;
-  margin-inline: auto;
-}
-
-/* Client Carousel Container */
 .our-client-carousel-container {
   position: relative;
   width: 90%;
   max-width: 1200px;
   overflow: hidden;
   margin: auto;
-  padding-bottom: 20px;
   margin-top: 1rem;
 }
 
-/* Carousel Row */
 .our-client-carousel {
   display: flex;
   gap: 20px;
-  animation: our-client-scroll 15s linear infinite;
-  -webkit-animation: our-client-scroll 15s linear infinite;
+  animation: scroll-clients 30s linear infinite;
+  width: max-content;
 }
 
-/* Scroll Animation */
-@keyframes our-client-scroll {
+@keyframes scroll-clients {
   from {
     transform: translateX(0);
   }
@@ -798,7 +798,6 @@ img {
   }
 }
 
-/* Individual Cards */
 .our-client-card {
   background: white;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -807,12 +806,11 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80px;
-  width: 150px;
+  height: 100px;
+  width: 200px;
   flex: 0 0 auto;
 }
 
-/* Responsive Adjustments */
 @media screen and (max-width: 1024px) {
   .our-client-card {
     width: 130px;
@@ -822,10 +820,6 @@ img {
 
   .our-client-container h2 {
     font-size: 24px;
-  }
-
-  .our-client-container p {
-    font-size: 14px;
   }
 }
 
@@ -838,10 +832,6 @@ img {
 
   .our-client-container h2 {
     font-size: 22px;
-  }
-
-  .our-client-container p {
-    font-size: 13px;
   }
 }
 
@@ -859,11 +849,8 @@ img {
   .our-client-container h2 {
     font-size: 20px;
   }
-
-  .our-client-container p {
-    font-size: 12px;
-  }
 }
+
 
 @media screen and (min-width: 480px) {
   .home__data,
@@ -887,9 +874,7 @@ img {
   .home__data {
     width: 480px;
   }
-  .home__title {
-    font-size: 36px;
-  }
+  
   .team__item-name,
   .footer__item-title {
     font-size: 20px;
@@ -946,7 +931,7 @@ img {
     width: 520px;
   }
   .home__title {
-    font-size: 38px;
+    font-size: 29px;
   }
   .service__group,
   .team__group {
@@ -978,7 +963,7 @@ img {
     text-align: left;
   }
   .home__text {
-    width: 400px;
+    width: 460px;
   }
   .feature__container {
     grid-template-columns: repeat(2, 1fr);

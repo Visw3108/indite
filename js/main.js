@@ -41,7 +41,7 @@ toggleBtn.addEventListener("click", toggleMenu);
 
 
 
-function startInfiniteScroll(containerId, direction = 'left', speed = 1) {
+/* function startInfiniteScroll(containerId, direction = 'left', speed = 1) {
   const container = document.getElementById(containerId);
   const clone = container.cloneNode(true);
   container.parentElement.appendChild(clone);
@@ -65,30 +65,31 @@ function startInfiniteScroll(containerId, direction = 'left', speed = 1) {
 document.addEventListener('DOMContentLoaded', () => {
   startInfiniteScroll('carousel-row-1', 'left', 0.5);
   startInfiniteScroll('carousel-row-2', 'right', 0.5);
-});
+}); */
 
 
 
 
-const carousel = document.getElementById("testimonialCarousel");
-    const wrapper = document.getElementById("carouselWrapper");
+  const carousel = document.getElementById("testimonialCarousel");
+  const wrapper = document.getElementById("carouselWrapper");
 
-    let scrollSpeed = 0.5; // pixels per frame
-    let position = 0;
-    let animationFrame;
+  let scrollSpeed = 0.5;
+  let position = 0;
 
-    function scrollCarousel() {
-      position -= scrollSpeed;
-      if (Math.abs(position) >= carousel.scrollWidth - wrapper.clientWidth) {
-        position = 0; // Reset to beginning
-      }
-      carousel.style.transform = `translateX(${position}px)`;
-      animationFrame = requestAnimationFrame(scrollCarousel);
+  function scrollCarousel() {
+    position -= scrollSpeed;
+
+    const resetThreshold = carousel.scrollWidth / 2;
+    if (Math.abs(position) >= resetThreshold) {
+      position = 0;
     }
 
-    // Start scrolling
-    scrollCarousel();
+    carousel.style.transform = `translateX(${position}px)`;
+    requestAnimationFrame(scrollCarousel);
+  }
 
-    // Pause on hover
-    wrapper.addEventListener("mouseenter", () => cancelAnimationFrame(animationFrame));
-    wrapper.addEventListener("mouseleave", () => scrollCarousel());
+  // Start scrolling
+  scrollCarousel();
+
+ 
+
