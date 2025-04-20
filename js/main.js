@@ -70,26 +70,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  const carousel = document.getElementById("testimonialCarousel");
-  const wrapper = document.getElementById("carouselWrapper");
+let currentIndex = 0;
+const testimonials = document.querySelectorAll('.testimonial__item');
+const dots = document.querySelectorAll('.dot');
 
-  let scrollSpeed = 0.5;
-  let position = 0;
+function showSlide(index) {
+  testimonials.forEach((item, i) => {
+    item.classList.toggle('active', i === index);
+    dots[i].classList.toggle('active', i === index);
+  });
+  currentIndex = index;
+}
 
-  function scrollCarousel() {
-    position -= scrollSpeed;
+function moveSlide(direction) {
+  let newIndex = currentIndex + direction;
+  if (newIndex < 0) newIndex = testimonials.length - 1;
+  if (newIndex >= testimonials.length) newIndex = 0;
+  showSlide(newIndex);
+}
 
-    const resetThreshold = carousel.scrollWidth / 2;
-    if (Math.abs(position) >= resetThreshold) {
-      position = 0;
-    }
-
-    carousel.style.transform = `translateX(${position}px)`;
-    requestAnimationFrame(scrollCarousel);
-  }
-
-  // Start scrolling
-  scrollCarousel();
-
+function currentSlide(index) {
+  showSlide(index);
+}
  
 
