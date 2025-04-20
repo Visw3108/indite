@@ -373,38 +373,41 @@ img {
 }
 
 .about-us-container {
-    background-color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 60vh;
-    margin-top: 6rem;
-    flex-direction: column;
-    text-align: center;
-    max-width: 1300px;
-    padding: 10px 20px;
-    width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 60vh;
+  margin-top: 6rem;
+  max-width: 1300px;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  gap: 30px;
 }
 
 .about-us-text {
-    max-width: 550px;
-    padding: 20px;
+  max-width: 550px;
+  padding: 20px;
+  width: 100%;
+  text-align: justify;
 }
 
 .about-us-highlight {
-    color: #08a87b;
-    font-weight: bold;
+  color: #08a87b;
+  font-weight: bold;
 }
 
 .about-us-heading {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin: 15px 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 15px 0;
 }
 
 .about-us-subheading {
-    font-size: 2.5rem;
-    font-weight: bold;
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 
 .about-us-description {
@@ -412,52 +415,98 @@ img {
   margin-top: 15px;
   line-height: 1.6;
   text-align: justify;
-  display: flex;
-  justify-content: center;
 }
 
-
 .about-us-image {
-    margin-top: 30px;
-    width: 100%;
-    max-width: 450px;
+  width: 100%;
+  max-width: 450px;
 }
 
 .about-us-image img {
-    width: 100%;
+  width: 100%;
+  height: auto;
 }
 
-/* Responsive Styles for Tablets and Larger Screens */
+/* Tablet and up */
 @media (min-width: 768px) {
-    .about-us-container {
-        flex-direction: row;
-        text-align: left;
-        gap: 50px;
-        padding: 60px;
-    }
-    .about-us-text {
-        text-align: left;
-        padding: 30px;
-    }
-    .about-us-image {
-        margin-top: 0;
-    }
+  .about-us-container {
+      flex-direction: row;
+      text-align: left;
+      gap: 50px;
+      padding: 60px;
+  }
+
+  .about-us-text {
+      text-align: justify;
+      padding: 30px;
+  }
+
+  .about-us-image {
+      margin-top: 0;
+  }
 }
 
-/* Responsive Styles for Mobile Screens */
+/* Medium screens: 481px to 767px */
+@media (min-width: 481px) and (max-width: 767px) {
+  .about-us-heading {
+      font-size: 2rem;
+  }
+
+  .about-us-subheading {
+      font-size: 1.6rem;
+  }
+
+  .about-us-description {
+      font-size: 1rem;
+  }
+}
+
+/* Mobile screens */
 @media (max-width: 480px) {
-    .about-us-heading {
-        font-size: 1.8rem;
-    }
-    .about-us-subheading {
-        font-size: 1.4rem;
-    }
-    .about-us-description {
-        font-size: 1rem;
-    }
-    .about-us-container {
-        padding: 20px;
-    }
+  .about-us-heading {
+      font-size: 1.8rem;
+  }
+
+  .about-us-subheading {
+      font-size: 1.4rem;
+  }
+
+  .about-us-description {
+      font-size: 1rem;
+  }
+
+  .about-us-container {
+      padding: 20px;
+  }
+}
+
+/* Large screens (e.g., 1300px and above) */
+@media (min-width: 1300px) {
+  .about-us-container {
+      max-width: 1600px;
+      padding: 80px 100px;
+      gap: 80px;
+  }
+
+  .about-us-heading {
+      font-size: 3rem;
+  }
+
+  .about-us-subheading {
+      font-size: 2.8rem;
+  }
+
+  .about-us-description {
+      font-size: 1.1rem;
+  }
+
+  .about-us-text {
+      max-width: 700px;
+  }
+
+  .about-us-image {
+      max-width: 550px;
+  }
 }
 
 /* Base Styles (Already Given) */
@@ -494,6 +543,7 @@ img {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    text-align: justify;
 }
 
 .join-button {
@@ -508,18 +558,15 @@ img {
     letter-spacing: 1px;
     display: inline-block;
     transition: background-color 0.3s, transform 0.3s;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
 }
 
+/* Hover effect */
 .join-button:hover {
     background: #067b5c;
     transform: scale(1.05);
 }
 
-/* Responsive Styles */
+/* --- Tablets (481px - 1024px) --- */
 @media (max-width: 1024px) {
     .mission-container {
         padding: 30px;
@@ -532,22 +579,7 @@ img {
     }
 }
 
-@media (max-width: 768px) {
-    .mission-container {
-        padding: 20px;
-    }
-    .main-heading {
-        font-size: 2rem;
-    }
-    .mission-description {
-        font-size: 0.95rem;
-    }
-    .join-button {
-        padding: 12px 30px;
-        font-size: 0.9rem;
-    }
-}
-
+/* --- Mobile Devices (up to 480px) --- */
 @media (max-width: 480px) {
     .mission-container {
         padding: 15px;
@@ -567,13 +599,62 @@ img {
     }
 }
 
+/* --- Mid-size Devices (481px to 768px) --- */
+@media (min-width: 481px) and (max-width: 768px) {
+    .mission-container {
+        padding: 20px;
+    }
+    .main-heading {
+        font-size: 2rem;
+    }
+    .mission-description {
+        font-size: 0.95rem;
+    }
+    .join-button {
+        padding: 12px 30px;
+        font-size: 0.9rem;
+    }
+}
+
+/* --- Desktops (1025px to 1299px) --- */
+@media (min-width: 1025px) and (max-width: 1299px) {
+    .main-heading {
+        font-size: 2.4rem;
+    }
+    .mission-description {
+        font-size: 1.05rem;
+    }
+}
+
+/* --- Large Desktops / 4K screens (1300px and above) --- */
+@media (min-width: 1300px) {
+    .mission-container {
+        max-width: 1600px;
+        padding: 80px 100px;
+    }
+    .main-heading {
+        font-size: 3rem;
+    }
+    .mission-heading {
+        font-size: 2rem;
+    }
+    .mission-description {
+        font-size: 1.2rem;
+    }
+    .join-button {
+        padding: 18px 50px;
+        font-size: 1rem;
+    }
+}
+
+
 
 /* Base styles */
 .our-story {
     display: flex;
     background: rgb(232, 232, 232);
     padding: 50px;
-    max-width: 1300px;
+    max-width: auto;
     align-items: center;
     margin-top: 40px;
     justify-content: center; /* Center content horizontally */
@@ -607,6 +688,7 @@ img {
     font-size: 1.1rem;
     margin-top: 10px;
     text-align: justify;
+    line-height: 1.2;
 }
 
 .our-story-btn {
