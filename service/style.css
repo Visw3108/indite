@@ -972,6 +972,16 @@ img {
   color: #72747a;
   text-align: center;
 }
+
+.footer__copy a {
+  color: #08a87b;
+  font-weight: 600;
+  text-decoration: none;
+}
+.footer__copy a:hover {
+  color: #067b5c;
+  text-decoration: underline;
+}
 .scrollup {
   position: fixed;
   right: 1.5rem;
