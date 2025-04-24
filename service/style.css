@@ -473,8 +473,9 @@ img {
 .card-text p {
   color: #4f5e77;
   line-height: 1.6;
-  font-size: 15px;
+  font-size: 17px;
   margin-bottom: 25px;
+  text-align: justify;
 }
 
 .read-more-btn {
@@ -559,8 +560,9 @@ img {
 .card-smo-content p {
   color: #4f5e77;
   line-height: 1.6;
-  font-size: 15px;
+  font-size: 17px;
   margin-bottom: 25px;
+  text-align: justify;
 }
 
 .card-smo-btn {
@@ -626,8 +628,9 @@ img {
 .web-dev-text p {
   color: #4f5e77;
   line-height: 1.6;
-  font-size: 15px;
+  font-size: 17px;
   margin-bottom: 25px;
+  text-align: justify;
 }
 
 .web-dev-btn {
@@ -712,8 +715,9 @@ img {
 .graphics-content p {
   color: #4f5e77;
   line-height: 1.6;
-  font-size: 15px;
+  font-size: 17px;
   margin-bottom: 25px;
+  text-align: justify;
 }
 
 .graphics-btn {
@@ -780,8 +784,9 @@ img {
 .content-text p {
   color: #4f5e77;
   line-height: 1.6;
-  font-size: 15px;
+  font-size: 17px;
   margin-bottom: 25px;
+  text-align: justify;
 }
 
 .content-btn {
@@ -866,8 +871,9 @@ img {
 .ppc-content p {
   color: #4f5e77;
   line-height: 1.6;
-  font-size: 15px;
+  font-size: 17px;
   margin-bottom: 25px;
+  text-align: justify;
 }
 
 .ppc-btn {
