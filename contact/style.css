@@ -385,6 +385,7 @@ img {
   gap: 40px;
   flex-wrap: wrap;
   position: relative;
+  margin-left: 1rem;
 }
 
 .contact-form, .contact-info {
@@ -850,6 +851,7 @@ p {
     left: 50%;
     transform: translateX(-50%);
     flex-direction: row;
+    margin-left: 2rem;
   }
   .header__button {
     margin-top: 0;
