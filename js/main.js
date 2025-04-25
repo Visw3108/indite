@@ -92,5 +92,11 @@ function moveSlide(direction) {
 function currentSlide(index) {
   showSlide(index);
 }
+
+// Auto move slide every 5 seconds
+setInterval(() => {
+  moveSlide(1);
+}, 2000);
+
  
 

@@ -36,44 +36,69 @@ toggleBtn.addEventListener("click", toggleMenu);
 
   
   
-  
-  const form = document.getElementById("contactForm");
-  const popup = document.getElementById("thankYouPopup");
+const form = document.getElementById("contactForm");
+const popup = document.getElementById("thankYouPopup");
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
 
-    const email = document.getElementById("email").value.trim();
-    const phone = document.getElementById("phone").value.trim();
+  const fields = [
+    { id: "firstName", pattern: /.+/, errorMsg: "First name is required" },
+    { id: "lastName", pattern: /.+/, errorMsg: "Last name is required" },
+    {
+      id: "email",
+      pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+      errorMsg: "Valid email is required",
+    },
+    {
+      id: "phone",
+      pattern: /^\d{10,15}$/,
+      errorMsg: "Phone number (10-15 digits) is required",
+    },
+    /* {
+      id: "service",
+      pattern: /.+/,
+      errorMsg: "Please select a service",
+    }, */
+   /*  {
+      id: "message",
+      pattern: /.+/,
+      errorMsg: "Message is required",
+    }, */
+  ];
 
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phonePattern = /^\d{10,15}$/;
+  let valid = true;
 
-    if (!emailPattern.test(email)) {
-      alert("Please enter a valid email address.");
-      return;
+  fields.forEach((field) => {
+    const input = document.getElementById(field.id);
+    const errorText = input.nextElementSibling;
+    if (!field.pattern.test(input.value.trim())) {
+      input.classList.add("input-error", "shake");
+      errorText.style.display = "block";
+      valid = false;
+
+      setTimeout(() => input.classList.remove("shake"), 500);
+    } else {
+      input.classList.remove("input-error");
+      errorText.style.display = "none";
     }
+  });
 
-    if (!phonePattern.test(phone)) {
-      alert("Please enter a valid phone number (10 to 15 digits).");
-      return;
-    }
-
+  if (valid) {
     popup.style.display = "flex";
     form.reset();
-  });
-
-  function closePopup() {
-    popup.style.display = "none";
   }
+});
 
-  window.addEventListener("click", function (e) {
-    if (e.target === popup) {
-      closePopup();
-    }
-  });
-  
-  
+function closePopup() {
+  popup.style.display = "none";
+}
+
+window.addEventListener("click", function (e) {
+  if (e.target === popup) {
+    closePopup();
+  }
+});
   
   
   

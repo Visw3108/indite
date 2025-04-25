@@ -381,11 +381,10 @@ img {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   padding: 40px;
   max-width: 1200px;
-  margin: 10px auto;
+  margin: 7rem auto 10px;
   gap: 40px;
   flex-wrap: wrap;
   position: relative;
-  margin-top: 7rem;
 }
 
 .contact-form, .contact-info {
@@ -418,7 +417,8 @@ form {
 }
 
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
   padding: 10px;
   border: 1px solid #999;
   border-radius: 8px;
@@ -426,19 +426,18 @@ form {
   transition: all 0.3s ease;
   outline: none;
   background-color: #fff;
-  box-shadow: none;
 }
 
-/* Hover effect */
 .form-group input:hover,
-.form-group textarea:hover {
+.form-group textarea:hover,
+.form-group select:hover {
   border-color: #08a87b;
   box-shadow: 0 0 6px rgba(8, 168, 123, 0.3);
 }
 
-/* Optional focus effect too (good for accessibility and UX) */
 .form-group input:focus,
-.form-group textarea:focus {
+.form-group textarea:focus,
+.form-group select:focus {
   border-color: #08a87b;
   box-shadow: 0 0 8px rgba(8, 168, 123, 0.5);
 }
@@ -447,7 +446,6 @@ textarea {
   min-height: 100px;
   resize: none;
 }
-
 
 .full {
   margin-bottom: 30px;
@@ -522,30 +520,28 @@ textarea {
   transform: scale(1.2);
 }
 
-.contact-container::before,
-.contact-container::after {
-  content: "";
-  position: absolute;
-  width: 200px;
-  height: 100px;
-  background: #f4f4f4;
-  z-index: -1;
+.input-error {
+  border: 1px solid red !important;
 }
 
-.contact-container::before {
-  top: -60px;
-  right: -40px;
-  border-radius: 50% 50% 0 0;
+.error-text {
+  display: none;
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
 }
 
-.contact-container::after {
-  bottom: -60px;
-  left: -40px;
-  border-radius: 0 0 50% 50%;
+.shake {
+  animation: shake 0.3s ease-in-out;
 }
 
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-4px); }
+}
 
-/* === Thank You Popup === */
 .thank-you-popup {
   display: none;
   position: fixed;
@@ -575,7 +571,6 @@ textarea {
   margin-bottom: 10px;
   font-size: 30px;
   color: #08a87b;
-  margin-right: 2rem;
 }
 
 .popup-content p {
@@ -597,7 +592,7 @@ textarea {
   justify-content: center;
   gap: 8px;
   transition: background 0.3s ease, transform 0.3s ease;
-  margin-left: 4rem;
+  margin: 0 auto;
 }
 
 .popup-content button:hover {
@@ -645,11 +640,6 @@ textarea {
 
   .submit-btn {
     width: 100%;
-  }
-
-  .contact-container::before,
-  .contact-container::after {
-    display: none;
   }
 }
   
