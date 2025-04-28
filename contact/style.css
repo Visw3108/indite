@@ -385,7 +385,6 @@ img {
   gap: 40px;
   flex-wrap: wrap;
   position: relative;
-  margin-left: 1rem;
 }
 
 .contact-form, .contact-info {

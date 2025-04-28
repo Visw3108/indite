@@ -259,6 +259,126 @@
 
   <!-- ===== MAIN JS ===== -->
   <script src="/contact/script.js"></script>
+
+  <script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+
+<!-- <script>
+    emailjs.init({
+              publicKey: "VwkuuBxcn1w84kNW6",
+            });
+</script> -->
+
+<script>
+  const form = document.getElementById("contactForm");
+const popup = document.getElementById("thankYouPopup");
+
+// Initialize EmailJS
+(function() {
+  emailjs.init({
+    publicKey: "VwkuuBxcn1w84kNW6",
+    blockHeadless: true,
+    limitRate: {
+      id: 'contactForm',
+      throttle: 10000 // 10 seconds
+    }
+  });
+})();
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const fields = [
+    { id: "firstName", pattern: /.+/, errorMsg: "First name is required" },
+    { id: "lastName", pattern: /.+/, errorMsg: "Last name is required" },
+    {
+      id: "email",
+      pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+      errorMsg: "Valid email is required",
+    },
+    {
+      id: "phone",
+      pattern: /^\d{10,15}$/,
+      errorMsg: "Phone number (10-15 digits) is required",
+    },
+    // Uncomment these if you want to make them required
+    /* {
+      id: "service",
+      pattern: /.+/,
+      errorMsg: "Please select a service",
+    }, */
+    /* {
+      id: "message",
+      pattern: /.+/,
+      errorMsg: "Message is required",
+    }, */
+  ];
+
+  let valid = true;
+
+  fields.forEach((field) => {
+    const input = document.getElementById(field.id);
+    const errorText = input.nextElementSibling;
+    if (!field.pattern.test(input.value.trim())) {
+      input.classList.add("input-error", "shake");
+      errorText.style.display = "block";
+      valid = false;
+
+      setTimeout(() => input.classList.remove("shake"), 500);
+    } else {
+      input.classList.remove("input-error");
+      errorText.style.display = "none";
+    }
+  });
+
+  if (valid) {
+    // Show loading state
+    const submitBtn = form.querySelector(".submit-btn");
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+
+    // Prepare email parameters using the exact field IDs from your HTML
+    const templateParams = {
+      from_name: document.getElementById("firstName").value.trim() + " " + 
+                 document.getElementById("lastName").value.trim(),
+      from_email: document.getElementById("email").value.trim(),
+      phone_number: document.getElementById("phone").value.trim(),
+      service: document.getElementById("service")?.value.trim() || "Not specified",
+      message: document.getElementById("message")?.value.trim() || "No message provided"
+    };
+
+    // Send the email using EmailJS
+    emailjs.send('service_037kd3e', 'template_h0bdq18', templateParams)
+      .then(function (response) {
+        console.log('SUCCESS!', response.status, response.text);
+        popup.style.display = "flex";
+        form.reset();
+      }, function (error) {
+        console.log('FAILED...', error);
+        alert("Something went wrong. Please try again later or contact us directly at connect@inditeindia.com");
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit";
+      });
+  }
+});
+
+function closePopup() {
+  popup.style.display = "none";
+}
+
+window.addEventListener("click", function (e) {
+  if (e.target === popup) {
+    closePopup();
+  }
+});
+  
+  
+  
+</script>
 </body>
 
 </html>
