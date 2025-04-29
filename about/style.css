@@ -23,6 +23,7 @@ a,
 li {
   list-style: none;
   text-decoration: none;
+  
 }
 button,
 input {
@@ -839,6 +840,8 @@ img {
   color: #000000;
   transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
 }
+
+
 
 .footer__item-icon:hover {
   color: #36deb4;

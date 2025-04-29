@@ -440,97 +440,171 @@ img {
 }
 
 
-.footer__container {
+/* Base Styles */
+.new-footer__container {
+  display: flex;
+  flex-direction: column;
   gap: 4rem;
+  padding: 2rem;
 }
-.footer__group {
+
+.new-footer__group {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
 }
-.footer__item-title {
+
+.new-footer__title {
   font-size: 18px;
   font-weight: 600;
-  color: #08a87b;
+  color: #000000;
   margin-top: 1rem;
 }
-.footer__item-text {
+
+.new-footer__desc {
   font-size: 15px;
-  color: #72747a;
-  margin: 10px 0 1.5rem;
-  line-height: 180%;
-}
-.footer__item-socials {
-  display: inline-flex;
-  align-items: center;
-  gap: 1rem;
-}
-.footer__item-icon {
-  display: inline-flex;
-  font-size: 1.5rem;
   color: #000000;
-  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+  margin: 10px 0 1.5rem;
+  line-height: 1.8;
 }
 
-.footer__item-icon:hover {
-  color: #36deb4;
-  transform: scale(1.2) rotate(0deg);
-  -webkit-transform: scale(1.2) rotate(0deg);
-  -moz-transform: scale(1.2) rotate(0deg);
-  -ms-transform: scale(1.2) rotate(0deg);
-  -o-transform: scale(1.2) rotate(0deg);
-}
-
-.footer__item-list {
+.new-footer__list {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
   margin-top: 1rem;
+  color: #000000;
 }
-.footer__item-link {
+
+.new-footer__link {
   font-size: 15px;
-  color: #4e4f52;
+  color: #000000;
+  text-decoration: none;
   position: relative;
-  display: inline-block;
-  transition: color 0.3s ease-in-out;
+  transition: color 0.3s;
 }
 
-.footer__item-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 0%;
-  height: 2px;
-  background-color: #08a87b;
-  transition: width 0.3s ease-in-out;
+.new-footer__link:hover {
+  color: #ff5722;
 }
 
-.footer__item-link:hover {
-  color: #08a87b;
+.new-footer__form {
+  display: flex;
+  margin-top: 1rem;
+  background: #1a1a1a;
+  border-radius: 4px;
+  overflow: hidden;
+  flex-wrap: wrap;
 }
 
-.footer__item-link:hover::after {
-  width: 100%;
+.new-footer__input {
+  padding: 0.75rem;
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: #000000;
+  min-width: 150px;
 }
 
-.footer__copy {
-  padding-top: 3rem;
-  border-top: 1.5px solid rgba(114, 116, 122, 0.3);
-  font-size: 15px;
-  color: #72747a;
-  text-align: center;
+.new-footer__submit {
+  background: #ff5722;
+  color: #000000;
+  padding: 0.75rem 1rem;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
 }
 
-.footer__copy a {
-  color: #08a87b;
-  font-weight: 600;
+.new-footer__socials {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.new-footer__social {
+  color: #ff5722;
+  font-size: 1.2rem;
+  transition: transform 0.3s;
+}
+
+.new-footer__social:hover {
+  transform: scale(1.2);
+}
+
+.new-footer__bottom {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: #000000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 14px;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.new-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.new-footer__links a {
+  color: #000000;
+  margin-left: 1rem;
   text-decoration: none;
 }
-.footer__copy a:hover {
-  color: #067b5c;
-  text-decoration: underline;
+
+.new-footer__links a:hover {
+  color: #ff5722;
 }
+
+.new-footer__logo-img {
+  width: 12rem;
+  height: auto;
+  margin-top: 1rem;
+}
+
+.new-footer__item {
+  /* Placeholder for individual list items */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .new-footer__group {
+    grid-template-columns: 1fr;
+  }
+
+  .new-footer__form {
+    flex-direction: column;
+  }
+
+  .new-footer__input,
+  .new-footer__submit {
+    width: 100%;
+  }
+
+  .new-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .new-footer__links {
+    margin-top: 1rem;
+    gap: 0.5rem;
+  }
+
+  .new-footer__links a {
+    margin-left: 0;
+    margin-right: 1rem;
+  }
+
+  .new-footer__logo-img {
+    width: 10rem;
+  }
+}
+
 .scrollup {
   position: fixed;
   right: 1.5rem;
@@ -837,7 +911,7 @@ h2 {
           </li>
         
           <li class="header__item"><a href="/blog/" class="header__link">Blog</a></li>
-          <li class="header__item"><a href="#" class="header__link">Career</a></li>
+          <li class="header__item"><a href="/blog/" class="header__link">Career</a></li>
         </ul>
 
         <a href="/contact/" class="header__button button button-fill">Contact</a>
@@ -852,147 +926,123 @@ h2 {
 
   <main class="main">
     <!-- ===== HOME SECTION ===== -->
-    <section class="content-management">
-      <div class="container">
-          <h1>Content Management</h1>
-          <p>At Indite India, we understand that compelling content is the backbone of every successful digital presence. Our expert Content Management services are designed to help businesses maintain consistent, high-quality content that informs, engages, and converts—across every platform and channel.</p>
-  
-          <h2>Why Choose Indite India for Content Management?</h2>
-          <p>From creating fresh, SEO-friendly content to streamlining how it’s organized and published, we offer end-to-end content solutions tailored to your brand voice and goals. Our team blends creativity with structure, ensuring your message is clear, your content is cohesive, and your audience stays connected.</p>
-  
-          <h2>Our Content Management Service Offerings</h2>
-          <div class="service-list">
-              <div class="service-item">
-                  <h3>1. Content Strategy Development</h3>
-                  <p>We create a robust content strategy aligned with your brand objectives—defining content types, distribution channels, and editorial calendars to ensure consistency and effectiveness.</p>
-              </div>
-              <div class="service-item">
-                  <h3>2. Website Content Management</h3>
-                  <p>Keep your website current, relevant, and engaging. We manage and update your website content, ensuring it aligns with SEO best practices and your evolving business needs.</p>
-              </div>
-              <div class="service-item">
-                  <h3>3. Blog & Article Management</h3>
-                  <p>From topic ideation to publication, we handle your blog content end-to-end—delivering informative, value-driven articles that boost search visibility and establish thought leadership.</p>
-              </div>
-              <div class="service-item">
-                  <h3>4. Social Media Content Management</h3>
-                  <p>Maintain a strong, active presence online with our social media content solutions. We plan, create, and schedule engaging posts that drive conversations and grow your community.</p>
-              </div>
-              <div class="service-item">
-                  <h3>5. Multimedia Content Integration</h3>
-                  <p>Enhance your content strategy with visuals, videos, and infographics that amplify your message. We manage and embed media seamlessly across platforms to enrich user experience.</p>
-              </div>
-              <div class="service-item">
-                  <h3>6. Content Calendar & Workflow Planning</h3>
-                  <p>Stay organized and ahead of deadlines with our structured content calendars and publishing workflows that streamline planning, approvals, and execution.</p>
-              </div>
-              <div class="service-item">
-                  <h3>7. CMS Support & Optimization</h3>
-                  <p>We help you manage and optimize content using platforms like WordPress, Shopify, and more—ensuring smooth functionality, fast load times, and easy navigation.</p>
-              </div>
-          </div>
-  
-          <h2>Our Approach</h2>
-          <p>At Indite India, content management is about more than just organization—it’s about building a consistent brand story. We take a strategic, collaborative approach that prioritizes clarity, coherence, and connection. With scalable systems and a keen eye on performance, we ensure your content evolves as your brand grows.</p>
-  
-          <h2>Let’s Make Your Content Work Smarter</h2>
-          <p>Ready to elevate your digital presence with impactful, well-managed content? Partner with Indite India for content solutions that keep your brand consistent, captivating, and competitive. <a href="/contact/">Contact us</a> today for a free consultation and take control of your content journey.</p>
-      </div>
-  </section>
-  
+    <section class="smo-services">
+        <div class="container">
+            <h1>SMO Services - Empowering Brands Through Strategic Social Media Presence</h1>
+            <p>In today’s digitally connected world, having a strong social media presence isn’t just optional, it’s essential. At Indite India, we offer cutting-edge Social Media Optimization (SMO) services designed to help your brand connect, engage, and grow across major social platforms. Our team blends creativity with data-driven strategies to craft compelling social media campaigns that resonate with your audience and reflect your brand’s voice. Whether you're aiming to increase visibility, build a loyal community, or drive conversions, we turn your social platforms into powerful marketing tools.</p>
+    
+            <h2>Why Choose Indite India for SMO?</h2>
+            <p>Indite India combines creative design, platform-specific strategies, and consistent branding to enhance your social media presence. Every post is purpose-driven, backed by research, and aligned with your business goals to ensure maximum impact and engagement. Our team stays updated with the latest trends, ensuring your content remains fresh, relevant, and competitive. We focus on building genuine connections with your audience to foster long-term loyalty and brand recognition.</p>
+    
+            <h2>Our SMO Service Offerings</h2>
+            <div class="service-list">
+                <div class="service-item">
+                    <h3>1. Platform Optimization</h3>
+                    <p>We ensure your social profiles are fully optimized — complete bios, branded visuals, proper keywords, and consistent messaging across all relevant platforms including Facebook, Instagram, LinkedIn, Twitter, and YouTube.</p>
+                </div>
+                <div class="service-item">
+                    <h3>2. Content Strategy & Creation</h3>
+                    <p>Our content experts develop engaging, value-driven content calendars tailored to your brand. From eye-catching graphics and reels to polls and stories, we keep your audience entertained and informed.</p>
+                </div>
+                <div class="service-item">
+                    <h3>3. Community Engagement</h3>
+                    <p>We manage interactions with your audience, replying to messages, comments, and mentions to foster meaningful relationships and build brand loyalty.</p>
+                </div>
+                <div class="service-item">
+                    <h3>4. Analytics & Reporting</h3>
+                    <p>We track performance metrics such as engagement rate, reach, follower growth, and conversions. Monthly reports help you understand what’s working and how we can refine the strategy further.</p>
+                </div>
+                <div class="service-item">
+                    <h3>5. Campaign Management</h3>
+                    <p>From seasonal promotions to brand awareness drives, we conceptualize and manage targeted social media campaigns that maximize visibility and engagement.</p>
+                </div>
+                <div class="service-item">
+                    <h3>6. Hashtag & Trend Research</h3>
+                    <p>We keep you on top of trending topics and use strategic hashtags to increase discoverability and keep your content in the spotlight.</p>
+                </div>
+                <div class="service-item">
+                    <h3>7. Influencer Collaboration Support</h3>
+                    <p>Want to amplify your brand through influencer marketing? We identify and connect you with the right voices in your industry to expand your reach authentically.</p>
+                </div>
+            </div>
+    
+            <h2>Our Approach</h2>
+            <p>At Indite India, SMO isn’t just about likes and shares — it’s about building meaningful connections, enhancing brand presence, and driving engagement. We follow a data-driven, creative, and dynamic approach that aligns with your business goals and adapts to the evolving social media landscape. Our team leverages the latest trends, platform updates, and audience insights to craft strategies that resonate with your target audience and elevate your brand’s social presence.</p>
+    
+            <h2>Get Started with Indite India</h2>
+            <p>With Indite India as your SMO partner, your brand won’t just be seen, it’ll be remembered. Whether you're starting from scratch or looking to enhance your current strategy, we’re here to elevate your social presence and connect you with the audiences that matter. <a href="/contact/">Contact us</a> today for a free consultation and discover how our SMO services can help you connect, engage, and grow.</p>
+        </div>
+    </section>
+    
+    
   </main>
 
   <!-- ===== FOOTER SECTION ===== -->
-  <footer class="footer section">
-    <div class="footer__container container grid">
-      <div class="footer__group">
-        <div class="footer__item">
-          <a href="#" class="footer__item-logo header__logo">
-            <img src="/img/inditeindia.png" alt="" class="header__logo-icon" />
+  <footer class="new-footer section">
+    <div class="new-footer__container container">
+      <div class="new-footer__group">
+        <!-- Logo and description -->
+        <div class="new-footer__item">
+          <a href="#" class="new-footer__logo">
+            <img src="/img/inditeindia.png" alt="Logo" class="new-footer__logo-img" />
           </a>
-          <p class="footer__item-text">
-            There's more to us than just Digital Marketing Solutions.
+          <p class="new-footer__desc">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.
           </p>
-          <div class="footer__item-socials">
-            <a href="#" class="footer__item-icon">
-              <i class="uil uil-instagram"></i>
-            </a>
-            <a href="#" class="footer__item-icon">
-              <i class="uil uil-twitter"></i>
-            </a>
-            <a href="#" class="footer__item-icon">
-              <i class="uil uil-linkedin"></i>
-            </a>
-            <a href="#" class="footer__item-icon">
-              <i class="uil uil-facebook"></i>
-            </a>
+        </div>
+  
+        <!-- Navigation links -->
+        <div class="new-footer__item">
+          <h3 class="new-footer__title">Navigation</h3>
+          <ul class="new-footer__list">
+            <li><a href="#" class="new-footer__link">Home</a></li>
+            <li><a href="#" class="new-footer__link">Services</a></li>
+            <li><a href="#" class="new-footer__link">Portfolio</a></li>
+            <li><a href="#" class="new-footer__link">About</a></li>
+            <li><a href="#" class="new-footer__link">Contact</a></li>
+          </ul>
+        </div>
+  
+        <!-- Contact info -->
+        <div class="new-footer__item">
+          <h3 class="new-footer__title">Contact</h3>
+          <ul class="new-footer__list">
+            <li><i class="uil uil-phone"></i> +(234) 567-8910</li>
+            <li><i class="uil uil-envelope"></i> example@domain.com</li>
+            <li><i class="uil uil-location-point"></i> Kazipur, Sirajgan, BD</li>
+            <li><i class="uil uil-globe"></i> roxthemes.com</li>
+            <li><i class="uil uil-schedule"></i> Mon – Fri / 8am–10pm</li>
+          </ul>
+        </div>
+  
+        <!-- Newsletter -->
+        <div class="new-footer__item">
+          <h3 class="new-footer__title">Get the latest information</h3>
+          <p class="new-footer__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <form class="new-footer__form">
+            <input type="email" placeholder="Your email" class="new-footer__input" />
+            <button type="submit" class="new-footer__submit"><i class="uil uil-message"></i></button>
+          </form>
+          <div class="new-footer__socials">
+            <a href="#" class="new-footer__social"><i class="uil uil-facebook-f"></i></a>
+            <a href="#" class="new-footer__social"><i class="uil uil-times"></i></a>
+            <a href="#" class="new-footer__social"><i class="uil uil-linkedin"></i></a>
+            <a href="#" class="new-footer__social"><i class="uil uil-instagram"></i></a>
           </div>
         </div>
-
-        <div class="footer__item">
-          <h3 class="footer__item-title">Quick Link</h3>
-
-          <ul class="footer__item-list">
-            <li>
-              <a href="/" class="footer__item-link">Home</a>
-            </li>
-            <li>
-              <a href="/about/" class="footer__item-link">About</a>
-            </li>
-            <li>
-              <a href="/service/" class="footer__item-link">Services</a>
-            </li>
-            <li>
-              <a href="/blog/" class="footer__item-link">Blog</a>
-            </li>
-            <li>
-              <a href="/" class="footer__item-link">Career</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="footer__item">
-          <h3 class="footer__item-title">Our Information</h3>
-
-          <ul class="footer__item-list">
-            <!-- <li>
-              <a href="#" class="footer__item-link">Return Policy</a>
-            </li> -->
-            <li>
-              <a href="#" class="footer__item-link">Privacy Policy</a>
-            </li>
-            <li>
-              <a href="#" class="footer__item-link">Terms & Conditions</a>
-            </li>
-            <!-- <li>
-              <a href="#" class="footer__item-link">Site Map</a>
-            </li> -->
-          </ul>
-        </div>
-
-        <div class="footer__item">
-          <h3 class="footer__item-title">Get in Touch</h3>
-
-          <ul class="footer__item-list">
-
-            <li class="footer__item-link">
-              <i class="uil uil-phone"></i>
-              +91 943-966-1483
-            </li>
-            <li class="footer__item-link">
-              <i class="uil uil-envelope"></i>
-              connect@inditeindia.com
-            </li>    
-          </ul>
+      </div>
+  
+      <div class="new-footer__bottom">
+        <p>Copyright © 2024 Saira By Roxthemes. All Rights Reserved.</p>
+        <div class="new-footer__links">
+          <a href="#">Terms & Service</a>
+          <a href="#">Privacy Policy</a>
         </div>
       </div>
-
-      <p class="footer__copy">
-        <img src="https://flagcdn.com/w40/in.png" alt="India Flag" style="height: 16px; vertical-align: middle; margin-right: 5px;">
-        Copyrights 2020, <a href="https://inditeindia.com">Inditeindia.com</a> - All rights reserved
-      </p>
     </div>
   </footer>
+  
+
   <!-- ===== FOOTER SECTION ===== -->
 
   <!-- ===== SCROLLUP SECTION ===== -->
