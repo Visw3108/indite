@@ -1134,7 +1134,7 @@ img {
   .service__group {
     grid-template-columns: repeat(3, max-content);
   }
-  .footer__container {
+  /* .footer__container {
     gap: 5rem;
-  }
+  } */
 }
