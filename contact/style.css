@@ -620,28 +620,110 @@ textarea {
   }
 }
 
-@media (max-width: 768px) {
+/* Small devices (phones, less than 480px) */
+@media (max-width: 480px) {
   .contact-container {
-    flex-direction: column;
-    padding: 30px 20px;
+    padding: 20px 15px;
+    margin: 4rem auto 10px;
+    gap: 20px;
+  }
+
+  .contact-info h2 {
+    font-size: 24px;
+  }
+
+  .contact-info p,
+  .info-item {
+    font-size: 13px;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    font-size: 13px;
+  }
+
+  .popup-content {
+    padding: 20px;
+  }
+
+  .popup-content h3 {
+    font-size: 24px;
+  }
+
+  .popup-content p {
+    font-size: 16px;
+  }
+
+  .popup-content button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .social-icons {
+    gap: 15px;
+    font-size: 18px;
+  }
+}
+
+/* Medium devices (tablets, 769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .contact-container {
+    flex-direction: row; /* Keep side-by-side layout */
+    padding: 40px 30px;
+    gap: 30px;
+  }
+
+  .contact-form, 
+  .contact-info {
+    flex: 1;
+    min-width: 45%;
   }
 
   .contact-info {
-    border-left: none;
-    border-top: 1px solid #ccc;
-    margin-top: 30px;
-    padding-top: 20px;
-    padding-left: 0;
+    border-left: 1px solid #ccc;
+    padding-left: 30px;
+    margin-top: 0;
+    border-top: none;
   }
 
   .form-row {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .form-group {
+    flex: 1;
+    min-width: 48%;
   }
 
   .submit-btn {
-    width: 100%;
+    width: 180px;
+    font-size: 15px;
+  }
+
+  .popup-content {
+    max-width: 80%;
   }
 }
+
+
+/* Large desktop support */
+@media (min-width: 1201px) {
+  .contact-container {
+    padding: 60px;
+  }
+
+  .submit-btn {
+    font-size: 16px;
+  }
+
+  .popup-content {
+    max-width: 500px;
+  }
+}
+
   
 
 .footer__container {
